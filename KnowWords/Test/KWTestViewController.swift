@@ -27,18 +27,22 @@ class KWTestViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     let dataArray = NSArray(objects:
-        Exam(name: "CET-4", introduce: "中国大学生英语四级考试", image: "cet.png"),
-        Exam(name: "CET-6", introduce: "中国大学生英语六级考试", image: "cet.png"),
-        Exam(name: "N5", introduce: "日本语能力测试五级", image: "ntest.png"),
-        Exam(name: "N4", introduce: "日本语能力测试四级", image: "ntest.png"),
-        Exam(name: "N3", introduce: "日本语能力测试三级", image: "ntest.png"),
-        Exam(name: "N2", introduce: "日本语能力测试二级", image: "ntest.png"),
-        Exam(name: "N1", introduce: "日本语能力测试一级", image: "ntest.png")
+        Exam(name: ExamType.CET4.rawValue, introduce: "中国大学生英语四级考试", image: "cet.png"),
+        Exam(name: ExamType.CET6.rawValue, introduce: "中国大学生英语六级考试", image: "cet.png"),
+        Exam(name: ExamType.N5.rawValue, introduce: "日本语能力测试五级", image: "ntest.png"),
+        Exam(name: ExamType.N4.rawValue, introduce: "日本语能力测试四级", image: "ntest.png"),
+        Exam(name: ExamType.N3.rawValue, introduce: "日本语能力测试三级", image: "ntest.png"),
+        Exam(name: ExamType.N2.rawValue, introduce: "日本语能力测试二级", image: "ntest.png"),
+        Exam(name: ExamType.N1.rawValue, introduce: "日本语能力测试一级", image: "ntest.png")
     )
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialConfig()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,12 +50,14 @@ class KWTestViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     private func initialConfig(){
+        //properties
         self.view.backgroundColor = inf.backColor
         self.tableView.backgroundColor = inf.backColor
         self.headView.backgroundColor = inf.backColor
-        
+        //values
         self.originNameTop = nameTop.constant
     }
+    
     
     
     // MARK: - Table view data source
@@ -77,13 +83,21 @@ class KWTestViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         let introLabel = cell.viewWithTag(3) as! UILabel
         introLabel.text = exam.introduce
-        
+    
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectionView = self.storyboard?.instantiateViewController(withIdentifier: "KWTypeSelectionTableViewController") as!KWTypeSelectionTableViewController
+        let exam = dataArray[indexPath.row] as!Exam
+        selectionView.examType = exam.name
+        self.navigationController?.pushViewController(selectionView, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
     
     // MARK: - Head view change
     
@@ -93,5 +107,5 @@ class KWTestViewController: UIViewController,UITableViewDataSource,UITableViewDe
             nameTop.constant = self.originNameTop-offsetY/2
         }
     }
-    
+
 }

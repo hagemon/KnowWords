@@ -10,13 +10,61 @@ import UIKit
 
 let inf = Information()
 
+enum ExamType:String {case
+    CET4="cet-4",
+    CET6="cet-6",
+    N1="N1",
+    N2="N2",
+    N3="N3",
+    N4="N4",
+    N5="N5"
+}
+
+
+enum TestStatus:Int{case Doing=0, Checking=1}
+
 class Information: NSObject {
     //colors
     let backColor = UIColor(hex:0xf5f5f5)
     let fontColor = UIColor(hex: 0x2f2f2f)
-    let frondColor = UIColor(hex: 0x0f7678)
+    let frontColor = UIColor(hex: 0x0f7678)
+    let wrongColor = UIColor(hex: 0xDE2A00)
     
     //sizes
     let sWidth = UIScreen.main.bounds.width
     let sHeight = UIScreen.main.bounds.height
+    
+    //example test
+    let exampleTest = [
+        "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu.",
+        "A. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+        "B. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "C. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+        "D. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
+        "解析：正确答案 B. Dolor in reprehenderit in voluptate sunt in culpa qui officia deserunt.",
+    ]
+    
+    let answerIndex = ["A":1,"B":2,"C":3,"D":4]
+    
+    let exampleTests = [
+        [
+            "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu.",
+            "A. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+            "B. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "C. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+            "D. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
+            "解析：正确答案 B. Dolor in reprehenderit in voluptate sunt in culpa qui officia deserunt.",
+            "B"
+        ],
+        [
+            "Nam liber te conscient to factor tum poen legum odioque civiuda.",
+            "A. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit ",
+            "B. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit.",
+            "C. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. ",
+            "D. Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. ",
+            "解析：正确答案 C. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum.",
+            "C"
+        ]
+
+    ]
 }
