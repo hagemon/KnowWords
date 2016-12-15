@@ -24,6 +24,7 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
     var selectedIndex = 0
     private var dataIndex = 0
     private var answerRight = true
+    private var titleData = inf.exampleTests as [[String]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,7 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
         self.testStatus = TestStatus(rawValue: (self.testStatus.rawValue+1) % 2)!
         if self.testStatus == .Checking{
             
-            let ans = inf.exampleTests[dataIndex][6]
+            let ans = self.titleData[dataIndex][6]
             if inf.answerIndex[ans] == self.selectedIndex{
                 answerRight = true
             }else{
@@ -76,7 +77,7 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
         }else{
             self.selectedIndex = -1
             self.tableView.allowsSelection = true
-            self.dataIndex = (self.dataIndex+1)%inf.exampleTests.count
+            self.dataIndex = (self.dataIndex+1)%self.titleData.count
             self.tableView.reloadData()
         }
 
@@ -149,7 +150,7 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid)!
         
         let contentLabel = cell.viewWithTag(1) as! UILabel
-        contentLabel.text = inf.exampleTests[dataIndex][index]
+        contentLabel.text = self.titleData[dataIndex][index]
         
         if index>0 && index<5 {
             contentLabel.textColor = inf.fontColor

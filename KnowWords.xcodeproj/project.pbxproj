@@ -18,6 +18,10 @@
 		BE2067A81DFEF85B005A55F5 /* KWShortTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067A71DFEF85B005A55F5 /* KWShortTestViewController.swift */; };
 		BE2067AC1E002971005A55F5 /* KWLongTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067AB1E002971005A55F5 /* KWLongTestViewController.swift */; };
 		BE2067AE1E0031CD005A55F5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067AD1E0031CD005A55F5 /* UIViewExtension.swift */; };
+		BE2067BD1E02739E005A55F5 /* KWFillBlankExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067B91E02739E005A55F5 /* KWFillBlankExtension.swift */; };
+		BE2067BE1E02739E005A55F5 /* KWFillBlankTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BA1E02739E005A55F5 /* KWFillBlankTextView.swift */; };
+		BE2067BF1E02739E005A55F5 /* KWFillBlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BB1E02739E005A55F5 /* KWFillBlankViewController.swift */; };
+		BE2067C01E02739E005A55F5 /* KWInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BC1E02739E005A55F5 /* KWInputBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		BE2067A71DFEF85B005A55F5 /* KWShortTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWShortTestViewController.swift; path = Test/KWShortTestViewController.swift; sourceTree = "<group>"; };
 		BE2067AB1E002971005A55F5 /* KWLongTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWLongTestViewController.swift; path = Test/KWLongTestViewController.swift; sourceTree = "<group>"; };
 		BE2067AD1E0031CD005A55F5 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
+		BE2067B91E02739E005A55F5 /* KWFillBlankExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWFillBlankExtension.swift; path = Test/Blank/KWFillBlankExtension.swift; sourceTree = "<group>"; };
+		BE2067BA1E02739E005A55F5 /* KWFillBlankTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWFillBlankTextView.swift; path = Test/Blank/KWFillBlankTextView.swift; sourceTree = "<group>"; };
+		BE2067BB1E02739E005A55F5 /* KWFillBlankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWFillBlankViewController.swift; path = Test/Blank/KWFillBlankViewController.swift; sourceTree = "<group>"; };
+		BE2067BC1E02739E005A55F5 /* KWInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWInputBar.swift; path = Test/Blank/KWInputBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +99,8 @@
 			children = (
 				BE20679E1DFD3C41005A55F5 /* KWTestViewController.swift */,
 				BE2067A51DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift */,
-				BE2067A71DFEF85B005A55F5 /* KWShortTestViewController.swift */,
-				BE2067AB1E002971005A55F5 /* KWLongTestViewController.swift */,
+				BE2067B01E027358005A55F5 /* Choice */,
+				BE2067AF1E02734C005A55F5 /* Blank */,
 			);
 			name = Test;
 			sourceTree = "<group>";
@@ -104,6 +112,26 @@
 				BE2067AD1E0031CD005A55F5 /* UIViewExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		BE2067AF1E02734C005A55F5 /* Blank */ = {
+			isa = PBXGroup;
+			children = (
+				BE2067B91E02739E005A55F5 /* KWFillBlankExtension.swift */,
+				BE2067BA1E02739E005A55F5 /* KWFillBlankTextView.swift */,
+				BE2067BB1E02739E005A55F5 /* KWFillBlankViewController.swift */,
+				BE2067BC1E02739E005A55F5 /* KWInputBar.swift */,
+			);
+			name = Blank;
+			sourceTree = "<group>";
+		};
+		BE2067B01E027358005A55F5 /* Choice */ = {
+			isa = PBXGroup;
+			children = (
+				BE2067A71DFEF85B005A55F5 /* KWShortTestViewController.swift */,
+				BE2067AB1E002971005A55F5 /* KWLongTestViewController.swift */,
+			);
+			name = Choice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,13 +208,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE2067A61DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift in Sources */,
+				BE2067BF1E02739E005A55F5 /* KWFillBlankViewController.swift in Sources */,
+				BE2067C01E02739E005A55F5 /* KWInputBar.swift in Sources */,
 				BE20679F1DFD3C41005A55F5 /* KWTestViewController.swift in Sources */,
 				BE2067AC1E002971005A55F5 /* KWLongTestViewController.swift in Sources */,
 				BE2067871DFD305F005A55F5 /* AppDelegate.swift in Sources */,
 				BE2067A41DFD3EF9005A55F5 /* Information.swift in Sources */,
+				BE2067BD1E02739E005A55F5 /* KWFillBlankExtension.swift in Sources */,
 				BE2067AE1E0031CD005A55F5 /* UIViewExtension.swift in Sources */,
 				BE2067A21DFD3E7D005A55F5 /* UIColorExtension.swift in Sources */,
 				BE2067A81DFEF85B005A55F5 /* KWShortTestViewController.swift in Sources */,
+				BE2067BE1E02739E005A55F5 /* KWFillBlankTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

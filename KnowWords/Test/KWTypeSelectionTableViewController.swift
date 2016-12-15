@@ -72,7 +72,7 @@ class KWTypeSelectionTableViewController: UITableViewController {
         case 1:
             viewid = "KWLongTestViewController"
         case 2:
-            viewid = "KWBlankTestViewController"
+            viewid = "KWFillBlankViewController"
         default:
             return
         }

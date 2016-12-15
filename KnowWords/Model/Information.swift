@@ -27,7 +27,7 @@ class Information: NSObject {
     //colors
     let backColor = UIColor(hex:0xf5f5f5)
     let fontColor = UIColor(hex: 0x2f2f2f)
-    let frontColor = UIColor(hex: 0x0f7678)
+    let frontColor = UIColor(hex: 0x0F7678)
     let wrongColor = UIColor(hex: 0xDE2A00)
     
     //sizes
@@ -107,5 +107,10 @@ class Information: NSObject {
             "解析：正确答案 B. Dolor in reprehenderit in voluptate sunt in culpa qui officia deserunt.",
             "解析：正确答案 C. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum."
         ]
+    ]
+    
+    let blankTests = [
+        ["Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore _____ aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco _____ nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat _____ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt www.google.com anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.","das","zuca","gut"],
+        ["Lorem ipsum dolor sit er elit lamet, consectetaur cillium _____ pecu, sed do eiusmod tempor incididunt ut labore et dolore das aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco zuca nisi ut aliquip ex ea commodo _____. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat gut pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt www.google.com anim id est laborum. Nam _____ te conscient to factor tum poen legum odioque civiuda.","adipisicing","consequat","liber"]
     ]
 }

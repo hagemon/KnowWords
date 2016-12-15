@@ -655,6 +655,120 @@
             </objects>
             <point key="canvasLocation" x="4248.8000000000002" y="-500.59970014992507"/>
         </scene>
+        <!--Fill Blank View Controller-->
+        <scene sceneID="nDR-mx-CyB">
+            <objects>
+                <viewController storyboardIdentifier="KWFillBlankViewController" automaticallyAdjustsScrollViewInsets="NO" id="cyF-3m-X1C" customClass="KWFillBlankViewController" customModule="KnowWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aJo-kO-OjG"/>
+                        <viewControllerLayoutGuide type="bottom" id="brC-t4-c2J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H5l-m0-IBF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jXR-Zc-yMZ" customClass="KWFillBlankTextView" customModule="KnowWords" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="531"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore _____ aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco _____ nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat _____ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt www.google.com anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cyF-3m-X1C" id="Nqs-EK-oSt"/>
+                                </connections>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImH-8v-NPB" userLabel="ToolView">
+                                <rect key="frame" x="0.0" y="559" width="375" height="108"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BpJ-Au-uYX" customClass="KWInputBar" customModule="KnowWords" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="uZz-2L-k3Y"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlU-tv-c9h">
+                                        <rect key="frame" x="170" y="64" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="DnZ-Xd-KGJ"/>
+                                            <constraint firstAttribute="width" constant="35" id="MFu-eg-teD"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwZ-42-60B">
+                                        <rect key="frame" x="170" y="64" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="8O9-Ef-Sn5"/>
+                                            <constraint firstAttribute="width" constant="35" id="jg0-uv-nnf"/>
+                                        </constraints>
+                                        <state key="normal" title="Play" image="play"/>
+                                        <connections>
+                                            <action selector="playAction:" destination="cyF-3m-X1C" eventType="touchUpInside" id="jcA-Ri-xBD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-LL-Vy4">
+                                        <rect key="frame" x="30" y="66" width="110" height="30"/>
+                                        <state key="normal" title="结束">
+                                            <color key="titleColor" red="0.1843137255" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="quitAction:" destination="cyF-3m-X1C" eventType="touchUpInside" id="MGR-u1-Mcs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufB-ZG-P5r">
+                                        <rect key="frame" x="235" y="66" width="110" height="30"/>
+                                        <color key="backgroundColor" red="0.058823529409999999" green="0.46274509800000002" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="继续">
+                                            <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextAction:" destination="cyF-3m-X1C" eventType="touchUpInside" id="xTX-u9-ZGP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="WlU-tv-c9h" firstAttribute="centerX" secondItem="ImH-8v-NPB" secondAttribute="centerX" id="1gz-2M-FNc"/>
+                                    <constraint firstItem="vwZ-42-60B" firstAttribute="centerY" secondItem="ImH-8v-NPB" secondAttribute="centerY" constant="27" id="1ql-Ty-8fm"/>
+                                    <constraint firstItem="vwZ-42-60B" firstAttribute="centerX" secondItem="ImH-8v-NPB" secondAttribute="centerX" id="3qf-Aa-zvI"/>
+                                    <constraint firstItem="2Ne-LL-Vy4" firstAttribute="leading" secondItem="ImH-8v-NPB" secondAttribute="leading" constant="30" id="PeK-E7-X7T"/>
+                                    <constraint firstItem="vwZ-42-60B" firstAttribute="leading" secondItem="2Ne-LL-Vy4" secondAttribute="trailing" constant="30" id="Q0x-nd-DcV"/>
+                                    <constraint firstAttribute="height" constant="108" id="QOh-e6-Osb"/>
+                                    <constraint firstItem="BpJ-Au-uYX" firstAttribute="leading" secondItem="ImH-8v-NPB" secondAttribute="leading" id="TUt-l2-hHd"/>
+                                    <constraint firstItem="BpJ-Au-uYX" firstAttribute="top" secondItem="ImH-8v-NPB" secondAttribute="top" id="bFZ-27-cgD"/>
+                                    <constraint firstAttribute="trailing" secondItem="ufB-ZG-P5r" secondAttribute="trailing" constant="30" id="duy-oq-2Pq"/>
+                                    <constraint firstItem="WlU-tv-c9h" firstAttribute="centerY" secondItem="ImH-8v-NPB" secondAttribute="centerY" constant="27" id="eRQ-YZ-7ab"/>
+                                    <constraint firstItem="ufB-ZG-P5r" firstAttribute="leading" secondItem="vwZ-42-60B" secondAttribute="trailing" constant="30" id="fY6-Nj-Qva"/>
+                                    <constraint firstItem="ufB-ZG-P5r" firstAttribute="centerY" secondItem="ImH-8v-NPB" secondAttribute="centerY" constant="27" id="ivW-b1-FlG"/>
+                                    <constraint firstAttribute="trailing" secondItem="BpJ-Au-uYX" secondAttribute="trailing" id="nza-Xf-yxq"/>
+                                    <constraint firstItem="2Ne-LL-Vy4" firstAttribute="centerY" secondItem="ImH-8v-NPB" secondAttribute="centerY" constant="27" id="uNo-ah-RsS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ImH-8v-NPB" firstAttribute="leading" secondItem="H5l-m0-IBF" secondAttribute="leading" id="15V-fW-xWk"/>
+                            <constraint firstItem="jXR-Zc-yMZ" firstAttribute="leading" secondItem="H5l-m0-IBF" secondAttribute="leading" id="3Ga-Wd-T7R"/>
+                            <constraint firstItem="brC-t4-c2J" firstAttribute="top" secondItem="ImH-8v-NPB" secondAttribute="bottom" id="BQd-eE-yf5"/>
+                            <constraint firstItem="jXR-Zc-yMZ" firstAttribute="top" secondItem="aJo-kO-OjG" secondAttribute="bottom" constant="8" id="b20-oO-4im"/>
+                            <constraint firstItem="ImH-8v-NPB" firstAttribute="top" secondItem="jXR-Zc-yMZ" secondAttribute="bottom" id="jkJ-wh-ivV"/>
+                            <constraint firstAttribute="trailing" secondItem="ImH-8v-NPB" secondAttribute="trailing" id="kP6-z0-SyD"/>
+                            <constraint firstAttribute="trailing" secondItem="jXR-Zc-yMZ" secondAttribute="trailing" id="m7d-mC-y6O"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="inputBar" destination="BpJ-Au-uYX" id="JVM-91-hzC"/>
+                        <outlet property="nextButton" destination="ufB-ZG-P5r" id="tRC-7E-PCh"/>
+                        <outlet property="playButton" destination="vwZ-42-60B" id="VYx-65-tiD"/>
+                        <outlet property="quitButton" destination="2Ne-LL-Vy4" id="QH7-wc-TfT"/>
+                        <outlet property="textView" destination="jXR-Zc-yMZ" id="MhG-DA-JyK"/>
+                        <outlet property="waveButton" destination="WlU-tv-c9h" id="l9d-z8-Ijk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ae-OY-P6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4980" y="-500.59970014992507"/>
+        </scene>
     </scenes>
     <resources>
         <image name="play" width="35" height="35"/>
