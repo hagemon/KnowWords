@@ -65,8 +65,19 @@ class KWTypeSelectionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destinationViewController = self.storyboard?.instantiateViewController(withIdentifier: "KWShortTestViewController") as!KWShortTestViewController
-        self.present(destinationViewController, animated: true, completion: nil)
+        var viewid = ""
+        switch indexPath.row {
+        case 0:
+            viewid = "KWShortTestViewController"
+        case 1:
+            viewid = "KWLongTestViewController"
+        case 2:
+            viewid = "KWBlankTestViewController"
+        default:
+            return
+        }
+        let destinationViewController = self.storyboard?.instantiateViewController(withIdentifier: viewid)
+        self.present(destinationViewController!, animated: true, completion: nil)
     }
  
 }

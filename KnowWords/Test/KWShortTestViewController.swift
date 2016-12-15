@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -21,8 +22,8 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
     var audioPlaying = false
     var testStatus:TestStatus = .Doing
     var selectedIndex = 0
-    var dataIndex = 0
-    var answerRight = true
+    private var dataIndex = 0
+    private var answerRight = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +81,8 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
     }
+    
+    
     @IBAction func quitAction(_ sender: Any) {
         
         let alertController = UIAlertController(title: nil, message: "确定要结束？", preferredStyle: .actionSheet)

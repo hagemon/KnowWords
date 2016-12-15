@@ -1,5 +1,5 @@
 //
-//  UIButtonExtension.swift
+//  UIViewExtension.swift
 //  KnowWords
 //
 //  Created by 一折 on 2016/12/13.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIButton{
-    override func setBorder(width:CGFloat = 1, color:UIColor = UIColor.black, cornerRadius:CGFloat = 5){
+extension UIView{
+    func setBorder(width:CGFloat = 1, color:UIColor = UIColor.black, cornerRadius:CGFloat = 5){
         self.clipsToBounds = true
         self.layer.borderWidth = width
         self.layer.cornerRadius = cornerRadius

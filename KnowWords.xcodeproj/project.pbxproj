@@ -16,7 +16,8 @@
 		BE2067A41DFD3EF9005A55F5 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067A31DFD3EF9005A55F5 /* Information.swift */; };
 		BE2067A61DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067A51DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift */; };
 		BE2067A81DFEF85B005A55F5 /* KWShortTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067A71DFEF85B005A55F5 /* KWShortTestViewController.swift */; };
-		BE2067AA1DFFCD8B005A55F5 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067A91DFFCD8B005A55F5 /* UIButtonExtension.swift */; };
+		BE2067AC1E002971005A55F5 /* KWLongTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067AB1E002971005A55F5 /* KWLongTestViewController.swift */; };
+		BE2067AE1E0031CD005A55F5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067AD1E0031CD005A55F5 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +32,8 @@
 		BE2067A31DFD3EF9005A55F5 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Information.swift; path = Model/Information.swift; sourceTree = "<group>"; };
 		BE2067A51DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWTypeSelectionTableViewController.swift; path = Test/KWTypeSelectionTableViewController.swift; sourceTree = "<group>"; };
 		BE2067A71DFEF85B005A55F5 /* KWShortTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWShortTestViewController.swift; path = Test/KWShortTestViewController.swift; sourceTree = "<group>"; };
-		BE2067A91DFFCD8B005A55F5 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButtonExtension.swift; path = Extensions/UIButtonExtension.swift; sourceTree = "<group>"; };
+		BE2067AB1E002971005A55F5 /* KWLongTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWLongTestViewController.swift; path = Test/KWLongTestViewController.swift; sourceTree = "<group>"; };
+		BE2067AD1E0031CD005A55F5 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				BE20679E1DFD3C41005A55F5 /* KWTestViewController.swift */,
 				BE2067A51DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift */,
 				BE2067A71DFEF85B005A55F5 /* KWShortTestViewController.swift */,
+				BE2067AB1E002971005A55F5 /* KWLongTestViewController.swift */,
 			);
 			name = Test;
 			sourceTree = "<group>";
@@ -98,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				BE2067A11DFD3E7D005A55F5 /* UIColorExtension.swift */,
-				BE2067A91DFFCD8B005A55F5 /* UIButtonExtension.swift */,
+				BE2067AD1E0031CD005A55F5 /* UIViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -178,9 +181,10 @@
 			files = (
 				BE2067A61DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift in Sources */,
 				BE20679F1DFD3C41005A55F5 /* KWTestViewController.swift in Sources */,
+				BE2067AC1E002971005A55F5 /* KWLongTestViewController.swift in Sources */,
 				BE2067871DFD305F005A55F5 /* AppDelegate.swift in Sources */,
 				BE2067A41DFD3EF9005A55F5 /* Information.swift in Sources */,
-				BE2067AA1DFFCD8B005A55F5 /* UIButtonExtension.swift in Sources */,
+				BE2067AE1E0031CD005A55F5 /* UIViewExtension.swift in Sources */,
 				BE2067A21DFD3E7D005A55F5 /* UIColorExtension.swift in Sources */,
 				BE2067A81DFEF85B005A55F5 /* KWShortTestViewController.swift in Sources */,
 			);
