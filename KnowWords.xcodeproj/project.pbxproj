@@ -22,6 +22,8 @@
 		BE2067BE1E02739E005A55F5 /* KWFillBlankTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BA1E02739E005A55F5 /* KWFillBlankTextView.swift */; };
 		BE2067BF1E02739E005A55F5 /* KWFillBlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BB1E02739E005A55F5 /* KWFillBlankViewController.swift */; };
 		BE2067C01E02739E005A55F5 /* KWInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BC1E02739E005A55F5 /* KWInputBar.swift */; };
+		BED452741E040AB90030AFAD /* KWSpokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */; };
+		BED452761E041D620030AFAD /* KWSpokenDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		BE2067BA1E02739E005A55F5 /* KWFillBlankTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWFillBlankTextView.swift; path = Test/Blank/KWFillBlankTextView.swift; sourceTree = "<group>"; };
 		BE2067BB1E02739E005A55F5 /* KWFillBlankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWFillBlankViewController.swift; path = Test/Blank/KWFillBlankViewController.swift; sourceTree = "<group>"; };
 		BE2067BC1E02739E005A55F5 /* KWInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWInputBar.swift; path = Test/Blank/KWInputBar.swift; sourceTree = "<group>"; };
+		BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenListViewController.swift; path = Spoken/KWSpokenListViewController.swift; sourceTree = "<group>"; };
+		BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenDetailTableViewController.swift; path = Spoken/KWSpokenDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 				BE2067A01DFD3E54005A55F5 /* Extensions */,
 				BE2067981DFD3523005A55F5 /* Model */,
 				BE2067991DFD352A005A55F5 /* Test */,
+				BED452721E040A8C0030AFAD /* Spoken */,
 				BE2067861DFD305F005A55F5 /* AppDelegate.swift */,
 				BE20678A1DFD305F005A55F5 /* Main.storyboard */,
 				BE20678D1DFD305F005A55F5 /* Assets.xcassets */,
@@ -132,6 +137,15 @@
 				BE2067AB1E002971005A55F5 /* KWLongTestViewController.swift */,
 			);
 			name = Choice;
+			sourceTree = "<group>";
+		};
+		BED452721E040A8C0030AFAD /* Spoken */ = {
+			isa = PBXGroup;
+			children = (
+				BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */,
+				BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */,
+			);
+			name = Spoken;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,10 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED452761E041D620030AFAD /* KWSpokenDetailTableViewController.swift in Sources */,
 				BE2067A61DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift in Sources */,
 				BE2067BF1E02739E005A55F5 /* KWFillBlankViewController.swift in Sources */,
 				BE2067C01E02739E005A55F5 /* KWInputBar.swift in Sources */,
 				BE20679F1DFD3C41005A55F5 /* KWTestViewController.swift in Sources */,
+				BED452741E040AB90030AFAD /* KWSpokenListViewController.swift in Sources */,
 				BE2067AC1E002971005A55F5 /* KWLongTestViewController.swift in Sources */,
 				BE2067871DFD305F005A55F5 /* AppDelegate.swift in Sources */,
 				BE2067A41DFD3EF9005A55F5 /* Information.swift in Sources */,
