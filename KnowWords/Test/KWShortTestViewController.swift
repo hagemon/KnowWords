@@ -19,7 +19,9 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var waveButtonWidth: NSLayoutConstraint!
     @IBOutlet var waveButtonHeight: NSLayoutConstraint!
     
-    var audioPlaying = false
+    var player:AVPlayer!
+    
+    var audioStatus:AudioStatus = .Stop
     var testStatus:TestStatus = .Doing
     var selectedIndex = 0
     private var dataIndex = 0
@@ -43,7 +45,11 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func audioAction(_ sender: Any) {
-        self.audioPlaying = !self.audioPlaying
+        if self.audioStatus == .Play{
+            self.pauseCurrentAudio()
+        }else{
+            self.playRemoteAudio(urlString: inf.exampleURL[self.dataIndex%2])
+        }
         self.waveAnimate()
     }
     @IBAction func nextAction(_ sender: Any) {
@@ -79,13 +85,15 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
             self.tableView.allowsSelection = true
             self.dataIndex = (self.dataIndex+1)%self.titleData.count
             self.tableView.reloadData()
+            self.player = nil
+            self.audioStatus = .Stop
         }
 
     }
     
     
     @IBAction func quitAction(_ sender: Any) {
-        
+        self.player = nil
         let alertController = UIAlertController(title: nil, message: "确定要结束？", preferredStyle: .actionSheet)
         let leaveAction = UIAlertAction(title: "结束", style: .destructive, handler: {
             _ in
@@ -102,9 +110,37 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    func playRemoteAudio(urlString:String){
+        if self.player != nil{
+            self.pauseCurrentAudio()
+        }
+        switch self.audioStatus {
+        case .Play:
+            return
+        case .Pause:
+            guard self.player != nil else {
+                return
+            }
+            self.player.play()
+        case .Stop:
+            let url = URL(string: urlString)
+            self.player = AVPlayer(url: url!)
+            self.player.play()
+        }
+        self.audioStatus = .Play
+    }
+    
+    func pauseCurrentAudio(){
+        guard self.player != nil else {
+            return
+        }
+        self.player.pause()
+        self.audioStatus = .Pause
+    }
+    
     // MARK: - Wave animate
     func waveAnimate(){
-        guard self.audioPlaying == true else {
+        guard self.audioStatus == .Play else {
             return
         }
         let transform = CGAffineTransform(scaleX: 2, y: 2)

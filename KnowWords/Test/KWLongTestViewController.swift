@@ -15,6 +15,7 @@ class KWLongTestViewController: KWShortTestViewController, UICollectionViewDataS
     var answers = [0,0,0,0]
     var titleData:NSArray = inf.exampleLongTests as NSArray
     var currentTitle = 0
+    var audioIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +52,20 @@ class KWLongTestViewController: KWShortTestViewController, UICollectionViewDataS
             self.collectionView.reloadData()
             self.tableView.allowsSelection = true
             self.collectionView.allowsSelection = true
+            self.player = nil
+            self.audioStatus = .Stop
+            self.audioIndex = self.audioIndex + 1
         }
         
+    }
+    
+    override func audioAction(_ sender: Any) {
+        if self.audioStatus == .Play{
+            self.pauseCurrentAudio()
+        }else{
+            self.playRemoteAudio(urlString: inf.exampleURL[self.audioIndex%2])
+        }
+        self.waveAnimate()
     }
     
     func reloadTitle(){
@@ -109,8 +122,8 @@ class KWLongTestViewController: KWShortTestViewController, UICollectionViewDataS
         }
         if cellid == "AnswerCell"{
             
-            let sans = inf.answerIndex[(titleData[currentTitle]as![String]).last!]
-            
+            let sans = inf.answerIndex[(titleData[indexPath.row]as![String]).last!]
+            print("\(self.answers[indexPath.row]),\(sans)")
             if answers[indexPath.row] == sans{
                 contentLabel.textColor = inf.frontColor
             }else{

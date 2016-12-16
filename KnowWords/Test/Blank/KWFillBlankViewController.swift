@@ -11,6 +11,7 @@ public protocol KWFillBlankDelegate {
 }
 
 import UIKit
+import AVFoundation
 
 class KWFillBlankViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate,KWInputBarDelegate {
 
@@ -22,11 +23,13 @@ class KWFillBlankViewController: UIViewController,UITextViewDelegate,UITextField
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var waveButton: UIButton!
     
+    var player:AVPlayer!
+    
+    var audioStatus:AudioStatus = .Stop
     var delegate:KWFillBlankDelegate!
     private var selectedRange:NSRange!
     private var currentTitle = 0
     private let titleData = inf.blankTests as [[String]]
-    private var audioPlaying = false
     private var testStatus:TestStatus = .Doing
     
     override func viewDidLoad() {
@@ -68,22 +71,26 @@ class KWFillBlankViewController: UIViewController,UITextViewDelegate,UITextField
         self.present(alertController, animated: true, completion: nil)
     }
     @IBAction func playAction(_ sender: Any) {
-        self.audioPlaying = !self.audioPlaying
+        if self.audioStatus == .Play{
+            self.pauseCurrentAudio()
+        }else{
+            self.playRemoteAudio(urlString: inf.exampleURL[self.currentTitle%2])
+        }
         self.waveAnimate()
     }
     @IBAction func nextAction(_ sender: Any) {
         
-//        guard !self.textView.contentTexts().contains("") else {
-//            let alertController = UIAlertController(title: nil, message: "请完成所有题目", preferredStyle: .alert)
-//            let confirmAction = UIAlertAction(title: "确定", style: .default, handler: {
-//                _ in
-//                alertController.dismiss(animated: true, completion: nil)
-//            })
-//            alertController.addAction(confirmAction)
-//            self.present(alertController, animated: true, completion: nil)
-//            return
-//        }
-//        
+        guard !self.textView.contentTexts().contains("") else {
+            let alertController = UIAlertController(title: nil, message: "请完成所有题目", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "确定", style: .default, handler: {
+                _ in
+                alertController.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
         self.testStatus = TestStatus(rawValue: (self.testStatus.rawValue+1) % 2)!
         if self.testStatus == .Checking{
             
@@ -95,11 +102,41 @@ class KWFillBlankViewController: UIViewController,UITextViewDelegate,UITextField
             let cnt = self.titleData.count
             self.currentTitle = (self.currentTitle+1)%cnt
             self.textView.initialConfigure(text: titleData[self.currentTitle][0])
+            self.player = nil
+            self.audioStatus = .Stop
         }
     }
     
+    func playRemoteAudio(urlString:String){
+        if self.player != nil{
+            self.pauseCurrentAudio()
+        }
+        switch self.audioStatus {
+        case .Play:
+            return
+        case .Pause:
+            guard self.player != nil else {
+                return
+            }
+            self.player.play()
+        case .Stop:
+            let url = URL(string: urlString)
+            self.player = AVPlayer(url: url!)
+            self.player.play()
+        }
+        self.audioStatus = .Play
+    }
+    
+    func pauseCurrentAudio(){
+        guard self.player != nil else {
+            return
+        }
+        self.player.pause()
+        self.audioStatus = .Pause
+    }
+    
     func waveAnimate(){
-        guard self.audioPlaying == true else {
+        guard self.audioStatus == .Play else {
             return
         }
         let transform = CGAffineTransform(scaleX: 2, y: 2)
