@@ -24,6 +24,11 @@
 		BE2067C01E02739E005A55F5 /* KWInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BC1E02739E005A55F5 /* KWInputBar.swift */; };
 		BED452741E040AB90030AFAD /* KWSpokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */; };
 		BED452761E041D620030AFAD /* KWSpokenDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */; };
+		BEE9A4121E0573B700B68AAF /* SpokenDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A4101E0573B700B68AAF /* SpokenDetailTableViewCell.swift */; };
+		BEE9A4131E0573B700B68AAF /* SpokenDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE9A4111E0573B700B68AAF /* SpokenDetailTableViewCell.xib */; };
+		BEE9A4251E06644B00B68AAF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE9A4221E06644B00B68AAF /* Info.plist */; };
+		BEE9A4261E06644B00B68AAF /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A4241E06644B00B68AAF /* WaveformView.swift */; };
+		BEE9A4281E06B29800B68AAF /* KWSpokenRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A4271E06B29800B68AAF /* KWSpokenRecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,12 @@
 		BE2067BC1E02739E005A55F5 /* KWInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWInputBar.swift; path = Test/Blank/KWInputBar.swift; sourceTree = "<group>"; };
 		BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenListViewController.swift; path = Spoken/KWSpokenListViewController.swift; sourceTree = "<group>"; };
 		BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenDetailTableViewController.swift; path = Spoken/KWSpokenDetailTableViewController.swift; sourceTree = "<group>"; };
+		BEE9A4101E0573B700B68AAF /* SpokenDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpokenDetailTableViewCell.swift; path = Spoken/SpokenCell/SpokenDetailTableViewCell.swift; sourceTree = "<group>"; };
+		BEE9A4111E0573B700B68AAF /* SpokenDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpokenDetailTableViewCell.xib; path = Spoken/SpokenCell/SpokenDetailTableViewCell.xib; sourceTree = "<group>"; };
+		BEE9A4221E06644B00B68AAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEE9A4231E06644B00B68AAF /* WaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveformView.h; sourceTree = "<group>"; };
+		BEE9A4241E06644B00B68AAF /* WaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
+		BEE9A4271E06B29800B68AAF /* KWSpokenRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenRecordViewController.swift; path = Spoken/KWSpokenRecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +153,33 @@
 		BED452721E040A8C0030AFAD /* Spoken */ = {
 			isa = PBXGroup;
 			children = (
+				BEE9A4211E06644B00B68AAF /* WaveformView */,
+				BEE9A40F1E05738D00B68AAF /* SpokenCell */,
 				BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */,
 				BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */,
+				BEE9A4271E06B29800B68AAF /* KWSpokenRecordViewController.swift */,
 			);
 			name = Spoken;
+			sourceTree = "<group>";
+		};
+		BEE9A40F1E05738D00B68AAF /* SpokenCell */ = {
+			isa = PBXGroup;
+			children = (
+				BEE9A4101E0573B700B68AAF /* SpokenDetailTableViewCell.swift */,
+				BEE9A4111E0573B700B68AAF /* SpokenDetailTableViewCell.xib */,
+			);
+			name = SpokenCell;
+			sourceTree = "<group>";
+		};
+		BEE9A4211E06644B00B68AAF /* WaveformView */ = {
+			isa = PBXGroup;
+			children = (
+				BEE9A4221E06644B00B68AAF /* Info.plist */,
+				BEE9A4231E06644B00B68AAF /* WaveformView.h */,
+				BEE9A4241E06644B00B68AAF /* WaveformView.swift */,
+			);
+			name = WaveformView;
+			path = Spoken/WaveformView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +242,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE9A4131E0573B700B68AAF /* SpokenDetailTableViewCell.xib in Resources */,
 				BE2067911DFD305F005A55F5 /* LaunchScreen.storyboard in Resources */,
 				BE20678E1DFD305F005A55F5 /* Assets.xcassets in Resources */,
+				BEE9A4251E06644B00B68AAF /* Info.plist in Resources */,
 				BE20678C1DFD305F005A55F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE9A4121E0573B700B68AAF /* SpokenDetailTableViewCell.swift in Sources */,
 				BED452761E041D620030AFAD /* KWSpokenDetailTableViewController.swift in Sources */,
 				BE2067A61DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift in Sources */,
 				BE2067BF1E02739E005A55F5 /* KWFillBlankViewController.swift in Sources */,
@@ -235,6 +272,8 @@
 				BE2067A21DFD3E7D005A55F5 /* UIColorExtension.swift in Sources */,
 				BE2067A81DFEF85B005A55F5 /* KWShortTestViewController.swift in Sources */,
 				BE2067BE1E02739E005A55F5 /* KWFillBlankTextView.swift in Sources */,
+				BEE9A4261E06644B00B68AAF /* WaveformView.swift in Sources */,
+				BEE9A4281E06B29800B68AAF /* KWSpokenRecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -116,4 +116,14 @@ class Information: NSObject {
     ]
     
     let exampleURL = ["http://xia2.kekenet.com/Sound/2016/04/cet62015123s2_37345925xm.mp3","http://xia2.kekenet.com/Sound/2016/03/cet62015122s1_4108904WrJ.mp3"]
+    
+    //document
+    func documentsFolder(filename:String) -> URL{
+        let folder = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
+        return (URL(fileURLWithPath: folder).appendingPathComponent("\(filename).caf"))
+    }
+    func fileExist(filePath:URL) -> Bool{
+        let fileManager = FileManager.default
+        return fileManager.fileExists(atPath: filePath.path)
+    }
 }
