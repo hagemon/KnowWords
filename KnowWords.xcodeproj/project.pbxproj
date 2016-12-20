@@ -29,6 +29,7 @@
 		BEE9A4251E06644B00B68AAF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE9A4221E06644B00B68AAF /* Info.plist */; };
 		BEE9A4261E06644B00B68AAF /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A4241E06644B00B68AAF /* WaveformView.swift */; };
 		BEE9A4281E06B29800B68AAF /* KWSpokenRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A4271E06B29800B68AAF /* KWSpokenRecordViewController.swift */; };
+		BEE9A42D1E07D2A800B68AAF /* KWMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A42C1E07D2A800B68AAF /* KWMeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		BEE9A4231E06644B00B68AAF /* WaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveformView.h; sourceTree = "<group>"; };
 		BEE9A4241E06644B00B68AAF /* WaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		BEE9A4271E06B29800B68AAF /* KWSpokenRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenRecordViewController.swift; path = Spoken/KWSpokenRecordViewController.swift; sourceTree = "<group>"; };
+		BEE9A42C1E07D2A800B68AAF /* KWMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWMeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				BE2067981DFD3523005A55F5 /* Model */,
 				BE2067991DFD352A005A55F5 /* Test */,
 				BED452721E040A8C0030AFAD /* Spoken */,
+				BEE9A42B1E07D28E00B68AAF /* Me */,
 				BE2067861DFD305F005A55F5 /* AppDelegate.swift */,
 				BE20678A1DFD305F005A55F5 /* Main.storyboard */,
 				BE20678D1DFD305F005A55F5 /* Assets.xcassets */,
@@ -182,6 +185,14 @@
 			path = Spoken/WaveformView;
 			sourceTree = "<group>";
 		};
+		BEE9A42B1E07D28E00B68AAF /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				BEE9A42C1E07D2A800B68AAF /* KWMeTableViewController.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,6 +279,7 @@
 				BE2067871DFD305F005A55F5 /* AppDelegate.swift in Sources */,
 				BE2067A41DFD3EF9005A55F5 /* Information.swift in Sources */,
 				BE2067BD1E02739E005A55F5 /* KWFillBlankExtension.swift in Sources */,
+				BEE9A42D1E07D2A800B68AAF /* KWMeTableViewController.swift in Sources */,
 				BE2067AE1E0031CD005A55F5 /* UIViewExtension.swift in Sources */,
 				BE2067A21DFD3E7D005A55F5 /* UIColorExtension.swift in Sources */,
 				BE2067A81DFEF85B005A55F5 /* KWShortTestViewController.swift in Sources */,
