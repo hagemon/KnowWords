@@ -9,6 +9,7 @@
 import UIKit
 
 let inf = Information()
+let kwdata = UserDefaults.standard
 
 enum ExamType:String {case
     CET4="cet-4",
@@ -126,4 +127,56 @@ class Information: NSObject {
         let fileManager = FileManager.default
         return fileManager.fileExists(atPath: filePath.path)
     }
+    func getRecords()->[String]{
+        let folder = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
+        let url = URL(fileURLWithPath:folder)
+        print(folder)
+        let fileManager = FileManager.default
+        do{
+            var files = try fileManager.contentsOfDirectory(atPath: url.path)
+            files = files.filter{!$0.hasPrefix(".")}
+            return files.map{
+                let index = $0.range(of: ".")
+                return $0.substring(to: (index?.lowerBound)!)
+            }
+        }catch{
+            return []
+        }
+    }
+    func getRecordInformation(filename:String)->(String,String){
+        let index = filename.range(of: "_")
+        let id = filename.substring(to: (index?.lowerBound)!)
+        let date = filename.substring(from: (index?.upperBound)!)
+        return (id,date)
+    }
+    func clearCache(){
+        let folder = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
+        let url = URL(fileURLWithPath:folder)
+        let fileManager = FileManager.default
+        do{
+            let files = try fileManager.contentsOfDirectory(atPath: url.path)
+            try files.forEach{
+                name in
+                try fileManager.removeItem(at: url.appendingPathComponent(name))
+            }
+        }catch{
+            return
+        }
+    }
+    
+    //time
+    func getCurrentTime()->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "zh_Hans_CN")
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.string(from: Date())
+    }
+    
+    func timeStr(second:Int)->String{
+        let minute = second/60
+        var timestr = minute>=10 ? "\(minute):" : "0\(minute):"
+        timestr = timestr + (second>=10 ? "\(second)" : "0\(second)")
+        return timestr
+    }
+
 }

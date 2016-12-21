@@ -89,6 +89,38 @@ class KWMeTableViewController: UITableViewController {
         cell.backgroundColor = inf.backColor
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.section>0 else {
+            return
+        }
+        if indexPath.section == 1{
+            
+            switch indexPath.row {
+            case 0:
+                self.pushViewController(withIdentifier: "KWMyrecordTableViewController")
+            case 1:
+                self.pushViewController(withIdentifier: "KWMytripTableViewController")
+            default:
+                return
+            }
+            
+        }else{
+            switch indexPath.row {
+            case 0:
+                return
+            case 1:
+                self.dismiss(animated: true, completion: nil)
+            default:
+                return
+            }
+        }
+        
+    }
+    func pushViewController(withIdentifier:String){
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: withIdentifier)
+        self.navigationController?.pushViewController(controller!, animated: true)
+    }
 
     
 }

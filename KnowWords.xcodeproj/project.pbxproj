@@ -22,6 +22,14 @@
 		BE2067BE1E02739E005A55F5 /* KWFillBlankTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BA1E02739E005A55F5 /* KWFillBlankTextView.swift */; };
 		BE2067BF1E02739E005A55F5 /* KWFillBlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BB1E02739E005A55F5 /* KWFillBlankViewController.swift */; };
 		BE2067C01E02739E005A55F5 /* KWInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067BC1E02739E005A55F5 /* KWInputBar.swift */; };
+		BE5961FB1E09078600770884 /* KWMyrecordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5961FA1E09078600770884 /* KWMyrecordListTableViewController.swift */; };
+		BE5961FD1E09258900770884 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5961FC1E09258900770884 /* Article.swift */; };
+		BE5961FF1E0932D400770884 /* KWMyrecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5961FE1E0932D400770884 /* KWMyrecordDetailViewController.swift */; };
+		BE5962021E0970BC00770884 /* KWMytripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5962011E0970BC00770884 /* KWMytripTableViewController.swift */; };
+		BE5962051E097C3900770884 /* KWMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5962041E097C3900770884 /* KWMainViewController.swift */; };
+		BE5962071E097C4B00770884 /* KWLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5962061E097C4B00770884 /* KWLoginViewController.swift */; };
+		BE5962091E0A7C8900770884 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5962081E0A7C8900770884 /* User.swift */; };
+		BE635EFF1E0A8484002E8C5D /* KWNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE635EFE1E0A8484002E8C5D /* KWNetTool.swift */; };
 		BED452741E040AB90030AFAD /* KWSpokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */; };
 		BED452761E041D620030AFAD /* KWSpokenDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */; };
 		BEE9A4121E0573B700B68AAF /* SpokenDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A4101E0573B700B68AAF /* SpokenDetailTableViewCell.swift */; };
@@ -30,9 +38,11 @@
 		BEE9A4261E06644B00B68AAF /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A4241E06644B00B68AAF /* WaveformView.swift */; };
 		BEE9A4281E06B29800B68AAF /* KWSpokenRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A4271E06B29800B68AAF /* KWSpokenRecordViewController.swift */; };
 		BEE9A42D1E07D2A800B68AAF /* KWMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A42C1E07D2A800B68AAF /* KWMeTableViewController.swift */; };
+		DDDA9B9C21BC5D2DF378818E /* Pods_KnowWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB765A74CB7B4850767E067 /* Pods_KnowWords.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23060117582138CA3DBF3157 /* Pods-KnowWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowWords/Pods-KnowWords.debug.xcconfig"; sourceTree = "<group>"; };
 		BE2067831DFD305F005A55F5 /* KnowWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2067861DFD305F005A55F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE20678B1DFD305F005A55F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +60,14 @@
 		BE2067BA1E02739E005A55F5 /* KWFillBlankTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWFillBlankTextView.swift; path = Test/Blank/KWFillBlankTextView.swift; sourceTree = "<group>"; };
 		BE2067BB1E02739E005A55F5 /* KWFillBlankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWFillBlankViewController.swift; path = Test/Blank/KWFillBlankViewController.swift; sourceTree = "<group>"; };
 		BE2067BC1E02739E005A55F5 /* KWInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWInputBar.swift; path = Test/Blank/KWInputBar.swift; sourceTree = "<group>"; };
+		BE5961FA1E09078600770884 /* KWMyrecordListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWMyrecordListTableViewController.swift; sourceTree = "<group>"; };
+		BE5961FC1E09258900770884 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Article.swift; path = Model/Article.swift; sourceTree = "<group>"; };
+		BE5961FE1E0932D400770884 /* KWMyrecordDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWMyrecordDetailViewController.swift; sourceTree = "<group>"; };
+		BE5962011E0970BC00770884 /* KWMytripTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWMytripTableViewController.swift; sourceTree = "<group>"; };
+		BE5962041E097C3900770884 /* KWMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWMainViewController.swift; sourceTree = "<group>"; };
+		BE5962061E097C4B00770884 /* KWLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWLoginViewController.swift; sourceTree = "<group>"; };
+		BE5962081E0A7C8900770884 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
+		BE635EFE1E0A8484002E8C5D /* KWNetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWNetTool.swift; path = Tool/KWNetTool.swift; sourceTree = "<group>"; };
 		BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenListViewController.swift; path = Spoken/KWSpokenListViewController.swift; sourceTree = "<group>"; };
 		BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenDetailTableViewController.swift; path = Spoken/KWSpokenDetailTableViewController.swift; sourceTree = "<group>"; };
 		BEE9A4101E0573B700B68AAF /* SpokenDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpokenDetailTableViewCell.swift; path = Spoken/SpokenCell/SpokenDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -59,6 +77,8 @@
 		BEE9A4241E06644B00B68AAF /* WaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		BEE9A4271E06B29800B68AAF /* KWSpokenRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenRecordViewController.swift; path = Spoken/KWSpokenRecordViewController.swift; sourceTree = "<group>"; };
 		BEE9A42C1E07D2A800B68AAF /* KWMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWMeTableViewController.swift; sourceTree = "<group>"; };
+		DAB765A74CB7B4850767E067 /* Pods_KnowWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnowWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF79C7F1D571DA39E0B15637 /* Pods-KnowWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowWords/Pods-KnowWords.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,17 +86,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDDA9B9C21BC5D2DF378818E /* Pods_KnowWords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16A61F6867711D418D258BD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAB765A74CB7B4850767E067 /* Pods_KnowWords.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4355E231D90F72B067926F47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23060117582138CA3DBF3157 /* Pods-KnowWords.debug.xcconfig */,
+				FF79C7F1D571DA39E0B15637 /* Pods-KnowWords.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE20677A1DFD305F005A55F5 = {
 			isa = PBXGroup;
 			children = (
 				BE2067851DFD305F005A55F5 /* KnowWords */,
 				BE2067841DFD305F005A55F5 /* Products */,
+				4355E231D90F72B067926F47 /* Pods */,
+				16A61F6867711D418D258BD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,12 +131,14 @@
 		BE2067851DFD305F005A55F5 /* KnowWords */ = {
 			isa = PBXGroup;
 			children = (
+				BE2067861DFD305F005A55F5 /* AppDelegate.swift */,
+				BE5962031E097C1800770884 /* Main */,
+				BE635EFD1E0A8466002E8C5D /* Tool */,
 				BE2067A01DFD3E54005A55F5 /* Extensions */,
 				BE2067981DFD3523005A55F5 /* Model */,
 				BE2067991DFD352A005A55F5 /* Test */,
 				BED452721E040A8C0030AFAD /* Spoken */,
 				BEE9A42B1E07D28E00B68AAF /* Me */,
-				BE2067861DFD305F005A55F5 /* AppDelegate.swift */,
 				BE20678A1DFD305F005A55F5 /* Main.storyboard */,
 				BE20678D1DFD305F005A55F5 /* Assets.xcassets */,
 				BE20678F1DFD305F005A55F5 /* LaunchScreen.storyboard */,
@@ -109,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				BE2067A31DFD3EF9005A55F5 /* Information.swift */,
+				BE5961FC1E09258900770884 /* Article.swift */,
+				BE5962081E0A7C8900770884 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -153,6 +197,40 @@
 			name = Choice;
 			sourceTree = "<group>";
 		};
+		BE5961F91E09077100770884 /* Myrecord */ = {
+			isa = PBXGroup;
+			children = (
+				BE5961FA1E09078600770884 /* KWMyrecordListTableViewController.swift */,
+				BE5961FE1E0932D400770884 /* KWMyrecordDetailViewController.swift */,
+			);
+			path = Myrecord;
+			sourceTree = "<group>";
+		};
+		BE5962001E0970A400770884 /* Mytrip */ = {
+			isa = PBXGroup;
+			children = (
+				BE5962011E0970BC00770884 /* KWMytripTableViewController.swift */,
+			);
+			path = Mytrip;
+			sourceTree = "<group>";
+		};
+		BE5962031E097C1800770884 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BE5962041E097C3900770884 /* KWMainViewController.swift */,
+				BE5962061E097C4B00770884 /* KWLoginViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BE635EFD1E0A8466002E8C5D /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				BE635EFE1E0A8484002E8C5D /* KWNetTool.swift */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
 		BED452721E040A8C0030AFAD /* Spoken */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +266,8 @@
 		BEE9A42B1E07D28E00B68AAF /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				BE5961F91E09077100770884 /* Myrecord */,
+				BE5962001E0970A400770884 /* Mytrip */,
 				BEE9A42C1E07D2A800B68AAF /* KWMeTableViewController.swift */,
 			);
 			path = Me;
@@ -200,9 +280,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE2067951DFD305F005A55F5 /* Build configuration list for PBXNativeTarget "KnowWords" */;
 			buildPhases = (
+				F4F1CAD15F26D0D240CCA07E /* [CP] Check Pods Manifest.lock */,
 				BE20677F1DFD305F005A55F5 /* Sources */,
 				BE2067801DFD305F005A55F5 /* Frameworks */,
 				BE2067811DFD305F005A55F5 /* Resources */,
+				429FB4B0B61E5B9CB36EDC19 /* [CP] Embed Pods Frameworks */,
+				C4EC31CE9812DBF9B1FFF94A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,12 +303,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = yizhe;
 				TargetAttributes = {
 					BE2067821DFD305F005A55F5 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = LD6682LBQK;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -263,15 +347,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		429FB4B0B61E5B9CB36EDC19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnowWords/Pods-KnowWords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4EC31CE9812DBF9B1FFF94A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnowWords/Pods-KnowWords-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4F1CAD15F26D0D240CCA07E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE20677F1DFD305F005A55F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5962071E097C4B00770884 /* KWLoginViewController.swift in Sources */,
+				BE5961FB1E09078600770884 /* KWMyrecordListTableViewController.swift in Sources */,
 				BEE9A4121E0573B700B68AAF /* SpokenDetailTableViewCell.swift in Sources */,
+				BE5962091E0A7C8900770884 /* User.swift in Sources */,
 				BED452761E041D620030AFAD /* KWSpokenDetailTableViewController.swift in Sources */,
 				BE2067A61DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift in Sources */,
+				BE5962051E097C3900770884 /* KWMainViewController.swift in Sources */,
+				BE5961FD1E09258900770884 /* Article.swift in Sources */,
 				BE2067BF1E02739E005A55F5 /* KWFillBlankViewController.swift in Sources */,
+				BE635EFF1E0A8484002E8C5D /* KWNetTool.swift in Sources */,
 				BE2067C01E02739E005A55F5 /* KWInputBar.swift in Sources */,
 				BE20679F1DFD3C41005A55F5 /* KWTestViewController.swift in Sources */,
 				BED452741E040AB90030AFAD /* KWSpokenListViewController.swift in Sources */,
@@ -284,8 +422,10 @@
 				BE2067A21DFD3E7D005A55F5 /* UIColorExtension.swift in Sources */,
 				BE2067A81DFEF85B005A55F5 /* KWShortTestViewController.swift in Sources */,
 				BE2067BE1E02739E005A55F5 /* KWFillBlankTextView.swift in Sources */,
+				BE5962021E0970BC00770884 /* KWMytripTableViewController.swift in Sources */,
 				BEE9A4261E06644B00B68AAF /* WaveformView.swift in Sources */,
 				BEE9A4281E06B29800B68AAF /* KWSpokenRecordViewController.swift in Sources */,
+				BE5961FF1E0932D400770884 /* KWMyrecordDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +469,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -378,6 +519,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -404,6 +546,7 @@
 		};
 		BE2067961DFD305F005A55F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23060117582138CA3DBF3157 /* Pods-KnowWords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LD6682LBQK;
@@ -417,6 +560,7 @@
 		};
 		BE2067971DFD305F005A55F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF79C7F1D571DA39E0B15637 /* Pods-KnowWords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LD6682LBQK;

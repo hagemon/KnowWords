@@ -23,11 +23,13 @@ class KWSpokenRecordViewController: UIViewController {
     
     var audioRecorder:AVAudioRecorder!
     var player:AVAudioPlayer!
+    var filename:String!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.audioRecorder = audioRecorder(inf.documentsFolder(filename: "\(articleId)"))
+        self.filename  = "\(self.articleId)_\(inf.getCurrentTime())"
+        self.audioRecorder = audioRecorder(inf.documentsFolder(filename: self.filename))
         let displayLink = CADisplayLink(target: self, selector: #selector(updateMeters))
         displayLink.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
         // Do any additional setup after loading the view.
@@ -40,7 +42,7 @@ class KWSpokenRecordViewController: UIViewController {
     
     @IBAction func playAction(_ sender: Any) {
         do{
-            self.player = try AVAudioPlayer(contentsOf: inf.documentsFolder(filename: "\(articleId)"))
+            self.player = try AVAudioPlayer(contentsOf: inf.documentsFolder(filename: self.filename))
             self.player.prepareToPlay()
         }catch {
             let alertController = UIAlertController(title: nil, message: "尚未完成录音", preferredStyle: .alert)
@@ -63,11 +65,11 @@ class KWSpokenRecordViewController: UIViewController {
     func updateMeters(){
         if self.audioRecorder.isRecording{
             let recordSecond = floor(self.audioRecorder.currentTime)
-            self.recordTime.text = timeStr(second: Int(recordSecond))
+            self.recordTime.text = inf.timeStr(second: Int(recordSecond))
         }
         if self.player != nil && self.player.isPlaying{
             let playSecond = floor(self.player.currentTime)
-            self.playTime.text = timeStr(second: Int(playSecond))
+            self.playTime.text = inf.timeStr(second: Int(playSecond))
         }
         self.audioRecorder.updateMeters()
         let normalizedValue = pow(10,self.audioRecorder.averagePower(forChannel: 0)/20)
@@ -79,7 +81,7 @@ class KWSpokenRecordViewController: UIViewController {
         if self.audioRecorder.isRecording{
             let recordSecond = floor(self.audioRecorder.currentTime)
             self.audioRecorder.stop()
-            self.recordTime.text = timeStr(second: Int(recordSecond))
+            self.recordTime.text = inf.timeStr(second: Int(recordSecond))
             self.recordButton.setImage(UIImage(named:"record"), for: .normal)
         }else{
             if inf.fileExist(filePath: inf.documentsFolder(filename: "\(articleId)")){
@@ -154,12 +156,7 @@ class KWSpokenRecordViewController: UIViewController {
         return audioRecorder
     }
     
-    func timeStr(second:Int)->String{
-        let minute = second/60
-        var timestr = minute>=10 ? "\(minute):" : "0\(minute):"
-        timestr = timestr + (second>=10 ? "\(second)" : "0\(second)")
-        return timestr
-    }
+
     /*
     // MARK: - Navigation
 
