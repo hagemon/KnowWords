@@ -69,13 +69,35 @@ class KWTypeSelectionTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             viewid = "KWShortTestViewController"
+            netTool.getShortTitle(level:self.examType , success: {
+                self.present(viewControllerWithIdentifier: viewid)
+            }, fail: {
+                message in
+                inf.showAlert(inViewController: self, message: message, confirm: "确定")
+            })
         case 1:
             viewid = "KWLongTestViewController"
+            netTool.getLongTitle(level: self.examType, success: {
+                self.present(viewControllerWithIdentifier: viewid)
+            }, fail: {
+                message in
+                inf.showAlert(inViewController: self, message: message, confirm: "确定")
+            })
         case 2:
             viewid = "KWFillBlankViewController"
+            netTool.getBlank(level: self.examType, success: {
+                self.present(viewControllerWithIdentifier: viewid)
+            }, fail: {
+                message in
+                inf.showAlert(inViewController: self, message: message, confirm: "确定")
+            })
         default:
             return
         }
+
+    }
+    
+    private func present(viewControllerWithIdentifier viewid:String){
         let destinationViewController = self.storyboard?.instantiateViewController(withIdentifier: viewid)
         self.present(destinationViewController!, animated: true, completion: nil)
     }

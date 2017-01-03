@@ -24,6 +24,7 @@ class KWSpokenRecordViewController: UIViewController {
     var audioRecorder:AVAudioRecorder!
     var player:AVAudioPlayer!
     var filename:String!
+    var saveFlag = false
     
     
     override func viewDidLoad() {
@@ -33,6 +34,12 @@ class KWSpokenRecordViewController: UIViewController {
         let displayLink = CADisplayLink(target: self, selector: #selector(updateMeters))
         displayLink.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.saveFlag == false{
+            inf.removeRecord(filename: self.filename)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,7 +132,21 @@ class KWSpokenRecordViewController: UIViewController {
         })
         let uploadAction = UIAlertAction(title: "上传并保存", style: .default, handler:{
             action in
-            self.saveAction(action)
+            self.saveFlag = true
+            let uploadAlertController = UIAlertController(title:"正在上传",message: "请稍等", preferredStyle: .alert)
+            self.present(uploadAlertController, animated: true, completion: nil)
+            netTool.upload(filename: self.filename,articleId: self.articleId, success: {
+                uploadAlertController.dismiss(animated: true, completion: {
+                    inf.showAlert(inViewController: self, message: "上传成功", confirmHandler:{
+                        _ = self.navigationController?.popViewController(animated: true)
+                    })
+                })
+            }, fail: {
+                message in
+                uploadAlertController.dismiss(animated: true, completion: {
+                    inf.showAlert(inViewController: self, message: message)
+                })
+            })
         })
         let saveAction = UIAlertAction(title: "保存", style: .default, handler: self.saveAction(_:))
         alertController.addAction(cancelAction)
@@ -135,7 +156,14 @@ class KWSpokenRecordViewController: UIViewController {
     }
     
     func saveAction(_ alertAction:UIAlertAction){
-        
+        self.saveFlag = true
+        let alertController = UIAlertController(title: nil, message: "保存成功", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "确定", style: .default, handler: {
+            action in
+            alertController.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(confirmAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func audioRecorder(_ filePath: URL) -> AVAudioRecorder {

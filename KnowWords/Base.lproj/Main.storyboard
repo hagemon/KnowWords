@@ -21,6 +21,11 @@
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.058823529409999999" green="0.46274509800000002" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.058823529409999999" green="0.46274509800000002" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="Byb-yq-75L" kind="relationship" relationship="viewControllers" id="qdZ-GV-Ppm"/>
@@ -163,7 +168,7 @@
         <scene sceneID="Vhn-ia-T7E">
             <objects>
                 <navigationController id="91c-H1-BYD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="口语" id="RDC-Bn-9KI"/>
+                    <tabBarItem key="tabBarItem" title="口语" image="speak" selectedImage="speak_select" id="RDC-Bn-9KI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lst-VZ-jgf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -437,28 +442,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Epx-sp-JFI">
                                 <rect key="frame" x="137.5" y="76" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="3V5-lu-mWE"/>
-                                    <constraint firstAttribute="width" constant="100" id="9Rh-Ny-JZ8"/>
+                                    <constraint firstAttribute="height" constant="100" id="NK6-CE-DtS"/>
+                                    <constraint firstAttribute="width" constant="100" id="iyf-21-GmO"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V19-0Y-cXo">
-                                <rect key="frame" x="87" y="224" width="200" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V19-0Y-cXo">
+                                <rect key="frame" x="16" y="224" width="343" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="RNh-a0-ERB"/>
-                                    <constraint firstAttribute="width" constant="200" id="TGR-w8-GX9"/>
+                                    <constraint firstAttribute="height" constant="38" id="PCV-aw-Qeg"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wpo-iC-6SV">
-                                <rect key="frame" x="87" y="290" width="200" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eee-li-gvv">
-                                <rect key="frame" x="87" y="356" width="200" height="30"/>
+                                <rect key="frame" x="16" y="335" width="343" height="38"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.46274509800000002" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="登录">
                                     <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -467,21 +465,32 @@
                                     <action selector="login:" destination="2Jc-L0-TX3" eventType="touchUpInside" id="gmX-bK-aTs"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wpo-iC-6SV">
+                                <rect key="frame" x="16" y="277" width="343" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Ebe-9Y-YRe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Eee-li-gvv" firstAttribute="centerX" secondItem="wpo-iC-6SV" secondAttribute="centerX" id="4tm-AI-GPo"/>
-                            <constraint firstItem="Epx-sp-JFI" firstAttribute="top" secondItem="vsy-cz-7bD" secondAttribute="bottom" constant="56" id="6To-H9-gTX"/>
-                            <constraint firstItem="Epx-sp-JFI" firstAttribute="centerX" secondItem="Ctz-v6-dbC" secondAttribute="centerX" id="6zE-p8-Y8Q"/>
-                            <constraint firstItem="Eee-li-gvv" firstAttribute="width" secondItem="wpo-iC-6SV" secondAttribute="width" id="8AN-Ud-3GT"/>
-                            <constraint firstItem="V19-0Y-cXo" firstAttribute="centerX" secondItem="Ctz-v6-dbC" secondAttribute="centerX" id="EaO-jS-pCT"/>
-                            <constraint firstItem="Eee-li-gvv" firstAttribute="top" secondItem="wpo-iC-6SV" secondAttribute="bottom" constant="36" id="PLH-R7-vNX"/>
-                            <constraint firstItem="wpo-iC-6SV" firstAttribute="width" secondItem="V19-0Y-cXo" secondAttribute="width" id="Pzb-h8-2Un"/>
-                            <constraint firstItem="wpo-iC-6SV" firstAttribute="height" secondItem="V19-0Y-cXo" secondAttribute="height" id="T1B-te-T8F"/>
-                            <constraint firstItem="V19-0Y-cXo" firstAttribute="top" secondItem="Epx-sp-JFI" secondAttribute="bottom" constant="48" id="qXl-R5-V8Y"/>
-                            <constraint firstItem="wpo-iC-6SV" firstAttribute="top" secondItem="V19-0Y-cXo" secondAttribute="bottom" constant="36" id="vxw-un-Gbn"/>
-                            <constraint firstItem="wpo-iC-6SV" firstAttribute="centerX" secondItem="V19-0Y-cXo" secondAttribute="centerX" id="yvZ-Rr-MJa"/>
-                            <constraint firstItem="Eee-li-gvv" firstAttribute="height" secondItem="wpo-iC-6SV" secondAttribute="height" id="zU9-cE-VLL"/>
+                            <constraint firstItem="Epx-sp-JFI" firstAttribute="centerX" secondItem="Ctz-v6-dbC" secondAttribute="centerX" id="71l-qe-xNF"/>
+                            <constraint firstItem="V19-0Y-cXo" firstAttribute="centerX" secondItem="Ctz-v6-dbC" secondAttribute="centerX" id="Apj-iB-wGS"/>
+                            <constraint firstItem="wpo-iC-6SV" firstAttribute="trailing" secondItem="Ctz-v6-dbC" secondAttribute="trailingMargin" id="CAg-Nb-Ex8"/>
+                            <constraint firstItem="Eee-li-gvv" firstAttribute="centerX" secondItem="wpo-iC-6SV" secondAttribute="centerX" id="KYK-kL-PpI"/>
+                            <constraint firstItem="wpo-iC-6SV" firstAttribute="top" secondItem="V19-0Y-cXo" secondAttribute="bottom" constant="15" id="Rlz-SQ-3QK"/>
+                            <constraint firstItem="Epx-sp-JFI" firstAttribute="top" secondItem="vsy-cz-7bD" secondAttribute="bottom" constant="56" id="ZMo-Tg-Tll"/>
+                            <constraint firstItem="V19-0Y-cXo" firstAttribute="trailing" secondItem="Ctz-v6-dbC" secondAttribute="trailingMargin" id="b9P-Xg-hki"/>
+                            <constraint firstItem="Eee-li-gvv" firstAttribute="height" secondItem="wpo-iC-6SV" secondAttribute="height" id="hOe-od-bsT"/>
+                            <constraint firstItem="V19-0Y-cXo" firstAttribute="leading" secondItem="Ctz-v6-dbC" secondAttribute="leadingMargin" id="ir4-49-0Vk"/>
+                            <constraint firstItem="Eee-li-gvv" firstAttribute="top" secondItem="wpo-iC-6SV" secondAttribute="bottom" constant="20" id="jIh-o9-Kus"/>
+                            <constraint firstItem="wpo-iC-6SV" firstAttribute="leading" secondItem="Ctz-v6-dbC" secondAttribute="leadingMargin" id="kMw-kF-nhR"/>
+                            <constraint firstItem="wpo-iC-6SV" firstAttribute="centerX" secondItem="Ctz-v6-dbC" secondAttribute="centerX" id="kY0-IO-HDQ"/>
+                            <constraint firstItem="Eee-li-gvv" firstAttribute="width" secondItem="wpo-iC-6SV" secondAttribute="width" id="nLP-lO-gLl"/>
+                            <constraint firstItem="V19-0Y-cXo" firstAttribute="top" secondItem="Epx-sp-JFI" secondAttribute="bottom" constant="48" id="waV-vy-zwc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -498,7 +507,7 @@
         <scene sceneID="em5-te-emE">
             <objects>
                 <navigationController id="Byb-yq-75L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="测试" id="7me-h2-1pB"/>
+                    <tabBarItem key="tabBarItem" title="测试" image="test" selectedImage="test_select" id="7me-h2-1pB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dpM-26-cPe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -966,6 +975,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qZ5-hg-yr6"/>
+                    <connections>
+                        <outlet property="tableView" destination="fYR-7w-goH" id="vmW-Dm-cij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6d-EH-Gtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -975,8 +987,8 @@
         <scene sceneID="qK3-6b-uXP">
             <objects>
                 <navigationController id="Z2O-9l-Jeb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" id="Hlq-wz-kaC"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cs9-oc-28T">
+                    <tabBarItem key="tabBarItem" title="我" image="me" selectedImage="me_select" id="Hlq-wz-kaC"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cs9-oc-28T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.058823529409999999" green="0.46274509800000002" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1299,7 +1311,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98o-ku-aiy">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98o-ku-aiy">
                                             <rect key="frame" x="20" y="15" width="335" height="270"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -1354,7 +1366,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="380" id="83d-kx-mD0"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" red="0.25098040700000002" green="0.29019609089999998" blue="0.34509804840000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1470,9 +1482,15 @@
     <resources>
         <image name="avatar" width="70" height="70"/>
         <image name="logo" width="453" height="453"/>
+        <image name="me" width="30" height="30"/>
+        <image name="me_select" width="30" height="30"/>
         <image name="play" width="35" height="35"/>
         <image name="play_2x" width="70" height="70"/>
         <image name="record" width="80" height="80"/>
+        <image name="speak" width="30" height="30"/>
+        <image name="speak_select" width="30" height="30"/>
+        <image name="test" width="30" height="30"/>
+        <image name="test_select" width="30" height="30"/>
         <image name="unRadio" width="20" height="20"/>
     </resources>
 </document>

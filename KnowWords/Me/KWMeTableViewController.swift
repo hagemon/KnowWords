@@ -14,6 +14,8 @@ class KWMeTableViewController: UITableViewController {
     let cellText = [["我的录音","我的历程","设置"],["清除缓存","退出登录"]]
     let icons = [["myrecord","mytrip","setting"],["clear","logout"]]
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundView = nil
@@ -77,9 +79,9 @@ class KWMeTableViewController: UITableViewController {
             headView.image = UIImage(named: "avatar")
         }else if cellid == "nameCell"{
             let usernameLabel = cell.viewWithTag(1) as!UILabel
-            usernameLabel.text = "Username"
+            usernameLabel.text = user.username
             let nicknameLabel = cell.viewWithTag(2) as!UILabel
-            nicknameLabel.text = "Nickname"
+            nicknameLabel.text = user.nickname
         }else{
             let index = indexPath.section-1
             cell.textLabel?.text = self.cellText[index][indexPath.row]

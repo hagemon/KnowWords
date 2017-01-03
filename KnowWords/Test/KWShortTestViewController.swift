@@ -26,7 +26,7 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
     var selectedIndex = 0
     private var dataIndex = 0
     private var answerRight = true
-    private var titleData = inf.exampleTests as [[String]]
+    private var titleData = titleTool.getShortTitles()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
         if self.audioStatus == .Play{
             self.pauseCurrentAudio()
         }else{
-            self.playRemoteAudio(urlString: inf.exampleURL[self.dataIndex%2])
+            self.playRemoteAudio(urlString: titleTool.exampleURL[self.dataIndex%2])
         }
         self.waveAnimate()
     }
@@ -69,7 +69,7 @@ class KWShortTestViewController: UIViewController, UITableViewDelegate, UITableV
         if self.testStatus == .Checking{
             
             let ans = self.titleData[dataIndex][6]
-            if inf.answerIndex[ans] == self.selectedIndex{
+            if titleTool.answerIndex[ans] == self.selectedIndex{
                 answerRight = true
             }else{
                 answerRight = false

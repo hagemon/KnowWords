@@ -10,9 +10,20 @@ import UIKit
 
 class KWSpokenListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var tableView: UITableView!
+    var articles:[Article] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = inf.backColor
+        netTool.getArticle(success: {
+            self.articles = titleTool.getArticles()
+            self.tableView.reloadData()
+        }, fail: {
+            message in
+            inf.showAlert(inViewController: self, message: message, confirm: "确定")
+        })
         // Do any additional setup after loading the view.
     }
 
@@ -35,6 +46,8 @@ class KWSpokenListViewController: UIViewController, UITableViewDelegate, UITable
         imageView.layer.masksToBounds = true
         let imageName = "\(indexPath.row%5+1).png"
         imageView.image = UIImage(named: imageName)
+        let titleLabel = cell.viewWithTag(2) as! UILabel
+        titleLabel.text = self.articles[indexPath.row].title
         return cell
     }
     
@@ -43,7 +56,7 @@ class KWSpokenListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.articles.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,6 +65,8 @@ class KWSpokenListViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let desViewController = self.storyboard?.instantiateViewController(withIdentifier: "KWSpokenDetailTableViewController") as! KWSpokenDetailTableViewController
+        desViewController.text = self.articles[indexPath.row].content
+        desViewController.articleId = self.articles[indexPath.row].id
         self.navigationController?.pushViewController(desViewController, animated: true)
     }
 

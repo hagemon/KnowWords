@@ -15,6 +15,11 @@ class KWSpokenDetailTableViewController: UITableViewController {
     var audioStatus:AudioStatus = .Stop
     var currentIndex = -1
     
+    var text:String = ""
+    var articleId = -1
+    
+    var comments:[Comment] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
@@ -28,8 +33,19 @@ class KWSpokenDetailTableViewController: UITableViewController {
         self.tableView.backgroundColor = inf.backColor
     }
     
+    func getComments(){
+        netTool.getComment(withArticleId: self.articleId, success: {
+            comments in
+            self.comments = comments
+            self.tableView.reloadData()
+        }, fail: {
+            message in
+            inf.showAlert(inViewController: self, message: message)
+        })
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.getComments()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +61,7 @@ class KWSpokenDetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 9+1
+        return self.comments.count+1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,6 +71,8 @@ class KWSpokenDetailTableViewController: UITableViewController {
             cellid = "DetailCell"
             cell = tableView.dequeueReusableCell(withIdentifier: cellid)!
             cell.backgroundColor = inf.backColor
+            let contentLabel = cell.viewWithTag(1) as! UILabel
+            contentLabel.text = self.text
         }else{
             cellid = "SpokenDetailTableViewCell"
             cell = tableView.dequeueReusableCell(withIdentifier: cellid) as! SpokenDetailTableViewCell
@@ -65,7 +83,8 @@ class KWSpokenDetailTableViewController: UITableViewController {
             (cell as! SpokenDetailTableViewCell).bubble.addGestureRecognizer(tap)
             let good = UITapGestureRecognizer(target: self, action: #selector(self.goodAction(_:)))
             (cell as! SpokenDetailTableViewCell).goodButton.addGestureRecognizer(good)
-            
+            (cell as! SpokenDetailTableViewCell).goodButton.setTitle(self.comments[indexPath.row-1].likeNumber, for: .normal)
+            (cell as! SpokenDetailTableViewCell).nickname.text = self.comments[indexPath.row-1].nickname
         }
         
         
@@ -101,8 +120,10 @@ class KWSpokenDetailTableViewController: UITableViewController {
         if self.audioStatus == .Stop{
             self.player = nil
             cell.bubble.startAnimating()
-            let url = URL(string: inf.exampleURL[0])!
-            self.player = AVPlayer(url: url)
+//            let url = URL(string: titleTool.exampleURL[0])! //url
+            let url = URL(string:self.comments[indexPath.row-1].url)
+            print(url ?? "fail")
+            self.player = AVPlayer(url: url!)
             self.player.play()
             self.audioStatus = .Play
         }else{
@@ -128,7 +149,7 @@ class KWSpokenDetailTableViewController: UITableViewController {
    
     @IBAction func record(_ sender: Any) {
         let recordVC = self.storyboard?.instantiateViewController(withIdentifier: "KWSpokenRecordViewController") as! KWSpokenRecordViewController
-        recordVC.articleId = -1
+        recordVC.articleId = self.articleId
         self.navigationController?.pushViewController(recordVC, animated: true)
     }
 }

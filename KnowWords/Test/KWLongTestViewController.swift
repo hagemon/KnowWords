@@ -13,7 +13,7 @@ class KWLongTestViewController: KWShortTestViewController, UICollectionViewDataS
     @IBOutlet var collectionView: UICollectionView!
     
     var answers = [0,0,0,0]
-    var titleData:NSArray = inf.exampleLongTests as NSArray
+    var titleData:NSArray = titleTool.getLongTitles()
     var currentTitle = 0
     var audioIndex = 0
 
@@ -45,7 +45,7 @@ class KWLongTestViewController: KWShortTestViewController, UICollectionViewDataS
             self.tableView.allowsSelection = false
             self.collectionView.allowsSelection = false
         }else{
-            self.titleData = inf.exampleLongTests as NSArray // change data
+            self.titleData = titleTool.getLongTitles() // change data
             self.answers = [0,0,0,0]
             self.currentTitle = 0
             self.tableView.reloadData()
@@ -63,7 +63,7 @@ class KWLongTestViewController: KWShortTestViewController, UICollectionViewDataS
         if self.audioStatus == .Play{
             self.pauseCurrentAudio()
         }else{
-            self.playRemoteAudio(urlString: inf.exampleURL[self.audioIndex%2])
+            self.playRemoteAudio(urlString: titleTool.exampleURL[self.audioIndex%2])
         }
         self.waveAnimate()
     }
@@ -122,7 +122,7 @@ class KWLongTestViewController: KWShortTestViewController, UICollectionViewDataS
         }
         if cellid == "AnswerCell"{
             
-            let sans = inf.answerIndex[(titleData[indexPath.row]as![String]).last!]
+            let sans = titleTool.answerIndex[(titleData[indexPath.row]as![String]).last!]
             print("\(self.answers[indexPath.row]),\(sans)")
             if answers[indexPath.row] == sans{
                 contentLabel.textColor = inf.frontColor

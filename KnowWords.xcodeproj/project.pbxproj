@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE12FB081E1B590700ACB82F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE12FB071E1B590700ACB82F /* Comment.swift */; };
 		BE2067871DFD305F005A55F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2067861DFD305F005A55F5 /* AppDelegate.swift */; };
 		BE20678C1DFD305F005A55F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE20678A1DFD305F005A55F5 /* Main.storyboard */; };
 		BE20678E1DFD305F005A55F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE20678D1DFD305F005A55F5 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		BE5962071E097C4B00770884 /* KWLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5962061E097C4B00770884 /* KWLoginViewController.swift */; };
 		BE5962091E0A7C8900770884 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5962081E0A7C8900770884 /* User.swift */; };
 		BE635EFF1E0A8484002E8C5D /* KWNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE635EFE1E0A8484002E8C5D /* KWNetTool.swift */; };
+		BECCFBE71E1901D800F728E8 /* TitleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCFBE61E1901D800F728E8 /* TitleTool.swift */; };
 		BED452741E040AB90030AFAD /* KWSpokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */; };
 		BED452761E041D620030AFAD /* KWSpokenDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */; };
 		BEE9A4121E0573B700B68AAF /* SpokenDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9A4101E0573B700B68AAF /* SpokenDetailTableViewCell.swift */; };
@@ -43,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		23060117582138CA3DBF3157 /* Pods-KnowWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowWords/Pods-KnowWords.debug.xcconfig"; sourceTree = "<group>"; };
+		BE12FB071E1B590700ACB82F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = Model/Comment.swift; sourceTree = "<group>"; };
 		BE2067831DFD305F005A55F5 /* KnowWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2067861DFD305F005A55F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE20678B1DFD305F005A55F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		BE5962061E097C4B00770884 /* KWLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWLoginViewController.swift; sourceTree = "<group>"; };
 		BE5962081E0A7C8900770884 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		BE635EFE1E0A8484002E8C5D /* KWNetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWNetTool.swift; path = Tool/KWNetTool.swift; sourceTree = "<group>"; };
+		BECCFBE61E1901D800F728E8 /* TitleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleTool.swift; path = Tool/TitleTool.swift; sourceTree = "<group>"; };
 		BED452731E040AB90030AFAD /* KWSpokenListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenListViewController.swift; path = Spoken/KWSpokenListViewController.swift; sourceTree = "<group>"; };
 		BED452751E041D620030AFAD /* KWSpokenDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KWSpokenDetailTableViewController.swift; path = Spoken/KWSpokenDetailTableViewController.swift; sourceTree = "<group>"; };
 		BEE9A4101E0573B700B68AAF /* SpokenDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpokenDetailTableViewCell.swift; path = Spoken/SpokenCell/SpokenDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				BE2067A31DFD3EF9005A55F5 /* Information.swift */,
 				BE5961FC1E09258900770884 /* Article.swift */,
 				BE5962081E0A7C8900770884 /* User.swift */,
+				BE12FB071E1B590700ACB82F /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				BE635EFE1E0A8484002E8C5D /* KWNetTool.swift */,
+				BECCFBE61E1901D800F728E8 /* TitleTool.swift */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -403,9 +409,11 @@
 				BE5962071E097C4B00770884 /* KWLoginViewController.swift in Sources */,
 				BE5961FB1E09078600770884 /* KWMyrecordListTableViewController.swift in Sources */,
 				BEE9A4121E0573B700B68AAF /* SpokenDetailTableViewCell.swift in Sources */,
+				BE12FB081E1B590700ACB82F /* Comment.swift in Sources */,
 				BE5962091E0A7C8900770884 /* User.swift in Sources */,
 				BED452761E041D620030AFAD /* KWSpokenDetailTableViewController.swift in Sources */,
 				BE2067A61DFE6BD2005A55F5 /* KWTypeSelectionTableViewController.swift in Sources */,
+				BECCFBE71E1901D800F728E8 /* TitleTool.swift in Sources */,
 				BE5962051E097C3900770884 /* KWMainViewController.swift in Sources */,
 				BE5961FD1E09258900770884 /* Article.swift in Sources */,
 				BE2067BF1E02739E005A55F5 /* KWFillBlankViewController.swift in Sources */,

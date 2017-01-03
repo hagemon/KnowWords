@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import ObjectMapper
 
-class Article: NSObject {
-    var id:Int
-    var title:String
-    var content:String
-    init(id:Int, title:String, content:String) {
-        self.id = id
-        self.title = title
-        self.content = content
+class Article: NSObject,Mappable {
+    var id:Int = -1
+    private var idStr:String = "-1"
+    var title:String = ""
+    var content:String = ""
+//    init(id:Int, title:String, content:String) {
+//        self.id = id
+//        self.title = title
+//        self.content = content
+//    }
+    
+    required init(map _:Map) {
+        
     }
+    
+    func mapping(map:Map){
+        self.idStr <- map["id"]
+        self.id = Int(self.idStr)!
+        self.title <- map["title"]
+        self.content <- map["content"]
+    }
+    
 }

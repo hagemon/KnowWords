@@ -30,6 +30,10 @@ class KWMyrecordListTableViewController: UITableViewController {
         for filename in files{
             self.localRecords.append(inf.getRecordInformation(filename: filename))
         }
+        self.localRecords = self.localRecords.filter{
+            (id,_) in
+            Int(id)!>0
+        }
         self.getReomoteArticles()
     }
     
@@ -39,9 +43,25 @@ class KWMyrecordListTableViewController: UITableViewController {
             (id,_) in
             ids.append(Int(id)!)
         })
+        ids = ids.filter{$0>0}
         // request with ids
-        let exampleArticle = Article(id: -1, title: "Example Article Title", content: "Example Article Content")
-        articles.setValue(exampleArticle, forKey: "-1")
+//        let exampleArticle = Article(id: -1, title: "Example Article Title", content: "Example Article Content")
+//        articles.setValue(exampleArticle, forKey: "-1")
+        netTool.getArticles(with: ids, success: {
+            articles in
+            self.articles.removeAllObjects()
+            for a in articles{
+                self.articles.setValue(a, forKey: "\(a.id)")
+            }
+            if self.articles.count == 0{
+                inf.showAlert(inViewController: self, message: "尚未有本地录音",confirm: "确定")
+            }
+            self.tableView.reloadData()
+        }, fail: {
+            message in
+            inf.showAlert(inViewController: self, message: message, confirm: "确定")
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +78,7 @@ class KWMyrecordListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return localRecords.count
+        return self.articles.count>0 ? self.localRecords.count : 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

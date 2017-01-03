@@ -38,10 +38,17 @@ class KWLoginViewController: UIViewController {
             self.showHud(message: "请输入完整的用户名密码", confirm: "确定")
             return
         }
-        netTool.login(username: self.username.text!, password: self.password.text!){
+        netTool.login(username: self.username.text!,
+                      password: self.password.text!,
+                      success: {
             let tab = self.storyboard?.instantiateViewController(withIdentifier: "KWMainViewController")
             self.present(tab!, animated: true, completion: nil)
-        }
+            },
+                    fail:{
+                        message in
+                        self.showHud(message: message,confirm: "确认")
+            }
+        )
     }
     
     func showHud(message:String, confirm:String="", cancel:String=""){

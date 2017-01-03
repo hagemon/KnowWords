@@ -29,7 +29,7 @@ class KWFillBlankViewController: UIViewController,UITextViewDelegate,UITextField
     var delegate:KWFillBlankDelegate!
     private var selectedRange:NSRange!
     private var currentTitle = 0
-    private let titleData = inf.blankTests as [[String]]
+    private let titleData = titleTool.getBlankTitles()
     private var testStatus:TestStatus = .Doing
     
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ class KWFillBlankViewController: UIViewController,UITextViewDelegate,UITextField
         if self.audioStatus == .Play{
             self.pauseCurrentAudio()
         }else{
-            self.playRemoteAudio(urlString: inf.exampleURL[self.currentTitle%2])
+            self.playRemoteAudio(urlString: titleTool.exampleURL[self.currentTitle%2])
         }
         self.waveAnimate()
     }

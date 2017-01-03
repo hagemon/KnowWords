@@ -20,7 +20,7 @@ public class WaveformView: UIView {
     @IBInspectable public var numberOfWaves = 5
     @IBInspectable public var primaryWaveLineWidth: CGFloat = 3.0
     @IBInspectable public var secondaryWaveLineWidth: CGFloat = 1.0
-    @IBInspectable public var idleAmplitude: CGFloat = 0.01
+    @IBInspectable public var idleAmplitude: CGFloat = 0.05
     @IBInspectable public var frequency: CGFloat = 1.25
     @IBInspectable public var density: CGFloat = 5
     @IBInspectable public var phaseShift: CGFloat = -0.15
